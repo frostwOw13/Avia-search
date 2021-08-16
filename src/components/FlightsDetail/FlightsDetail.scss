@@ -1,0 +1,147 @@
+.flight__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin-bottom: 30px;
+}
+
+.header {
+  background-color: rgb(99, 66, 243);
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.header__wrapper {
+ margin: 0 20px;
+ width: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+
+ .header__title {
+   font-size: 24px;
+ }
+
+  .header__price-block {
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .header__price {
+    font-size: 26px;
+  }
+  
+  .header__price-desc {
+    font-size: 12px;
+  }
+}
+
+.main {
+  width: 100%;
+}
+
+.main__wrapper {
+  margin: 0 20px;
+}
+
+.flight-section {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+
+  &.direct {
+    border-bottom: 3px blue solid;
+  }
+
+  .cities-section {
+    display: flex;
+    align-items: center;
+  }
+
+  .right-arrow {
+    background-image: url(../../assets/right-arrow.png);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 50%;
+    width: 40px;
+    height: 40px;
+  }
+
+  .carrier-by {
+    text-align: start;
+    font-size: 20px;
+  }
+}
+
+.time-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .time-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .connection-row {
+    position: relative;
+    width: 80%;
+
+    span {
+      color: orange;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      background-color: rgb(141, 141, 141);
+      width: 40%;
+      height: 1px;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      background-color: rgb(141, 141, 141);
+      width: 40%;
+      height: 1px;
+    }
+  }
+}
+
+.flight__button {
+  text-transform: uppercase;
+  color: white;
+  background-color: rgb(255, 187, 62);
+  border: none;
+  font-size: 18px;
+  width: 100%;
+  height: 40px;
+  transition: 0.1s all ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+  
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
