@@ -1,26 +1,34 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import FlightsDetails from '../FlightsDetail/FlightsDetails';
 
-const FlightsList = () => {
-  const [flights, setFlights] = useState();
-
-  useEffect(() => {
-    async function fetchData() {
-      const response = await fetch('./flights.json');
-      const json = await response.json();
-      setFlights(json.result.flights.splice(0, 2))
+const FlightsList = ({ 
+  flights,
+  sortBy,
+  filterBy,
+  priceFrom,
+  priceTo
+ }) => {
+  function sortByFunction (flight) {
+    if (sortBy === undefined) return flight; 
+    else if (sortBy === 'sort-inc') {
+      flights.sort((a, b) => {
+        return a.flight.price.total.amount - b.flight.price.total.amount
+      })
     }
-    fetchData()
-  }, []);
-
-  console.log(flights)
+    else if (sortBy === 'sort-dec') {
+      flights.sort((a, b) => {
+        return b.flight.price.total.amount - a.flight.price.total.amount
+      })
+    }
+    return flight;
+  }
 
   return (
-    <>
-      {flights?.map((flight) => {
+    <div className="flights-list">
+      {flights?.filter((flight) => sortByFunction(flight)).map((flight) => {
         return <FlightsDetails key={flight.token} flight={flight.flight} />
       })}
-    </>
+    </div>
   )
 }
 

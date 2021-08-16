@@ -1,0 +1,16 @@
+@import './fonts.scss';
+@import './reset.scss';
+
+.App {
+  text-align: center;
+  font-size: 18px;
+  max-width: 1200px;
+  display: flex;
+}
+
+.flights-list {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 70%;
+  margin-top: 50px;
+}
