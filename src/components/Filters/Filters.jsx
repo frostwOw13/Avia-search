@@ -14,7 +14,7 @@ const Filters = ({
           onClick={(e) => {
             setSortBy(e.target.id);
           }}>
-          <p className="sort-by__inputs">Сортировать</p>
+          <p className="sort-by__inputs input__title">Сортировать</p>
           <label><input type="radio" id="sort-inc" name="sort" /> - по возрастанию цены</label>
           <label><input type="radio" id="sort-dec" name="sort" /> - по убыванию цены</label>
         </div>
@@ -23,13 +23,13 @@ const Filters = ({
           onClick={(e) => {
             setFilterBy(e.target.id);
           }}>
-          <p className="filter__inputs">Фильтровать</p>
+          <p className="filter__inputs input__title">Фильтровать</p>
           <label><input type="checkbox" id="filter-one" /> - 1 пересадка</label>
           <label><input type="checkbox" id="filter-zero" /> - без пересадок</label>
         </div>
 
         <div className="price input-group" >
-          <p className="price__inputs">Цена</p>
+          <p className="price__inputs input__title">Цена</p>
           <label>От <input 
             type="text" 
             id="from" 

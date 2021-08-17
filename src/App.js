@@ -5,10 +5,10 @@ import FlightsList from './components/FlightsList/FlightsList';
 
 function App() {
   const [flights, setFlights] = useState();
-  const [sortBy, setSortBy] = useState('');
-  const [filterBy, setFilterBy] = useState('');
-  const [priceFrom, setPriceFrom] = useState();
-  const [priceTo, setPriceTo] = useState();
+  const [sortBy, setSortBy] = useState("");
+  const [filterBy, setFilterBy] = useState("");
+  const [priceFrom, setPriceFrom] = useState("");
+  const [priceTo, setPriceTo] = useState("");
 
   useEffect(() => {
     async function fetchData() {
